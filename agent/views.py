@@ -6,10 +6,10 @@ from .models import Agent
 
 class AgentListView(ListView):
     model = Agent
-    template_name = 'agent_list.html'
+    template_name = 'agent/agent_list.html'
     context_object_name = 'agents'
 
 class AgentDetailView(DetailView):
     model = Agent
-    template_name = 'agent_detail.html'
+    template_name = 'agent/agent_detail.html'
     context_object_name = 'agent'
