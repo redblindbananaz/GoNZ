@@ -1,3 +1,20 @@
-h1 {
-  color: chartreuse;
+/* Hero Section */
+.maintitle {
+  position: relative;
+  color: azure;
+  font-size: 4em;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
