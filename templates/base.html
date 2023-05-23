@@ -13,6 +13,10 @@
     <title>GoNz</title>
   </head>
   <body>
-    {% include '/navigation.html' %} {% block content %}{% endblock %}
+    {% include 'navigation.html' %}
+    <div class="hero-image">
+      <img src="{% static 'images/heroshot.jpg' %}" alt="hero-image" />
+    </div>
+    {% block content %} {% endblock %}
   </body>
 </html>
