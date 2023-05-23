@@ -1,11 +1,24 @@
 /* Hero Section */
-.maintitle {
+.h1-container {
   position: relative;
-  color: azure;
-  font-size: 4em;
-  top: 0;
+  top: 10em;
   left: 0;
-  z-index: 2;
+  text-align: center;
+  z-index: 3;
+  color: white;
+}
+.line1 {
+  font-size: 2.4em;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+.line2 {
+  font-size: 5em;
+}
+.line3 {
+  font-size: 0.7em;
+  letter-spacing: 0.7em;
+  font-weight: 200;
 }
 .hero-image {
   position: absolute;
@@ -18,3 +31,5 @@
   height: auto;
   object-fit: cover;
 }
+
+/* Navigation Section */
