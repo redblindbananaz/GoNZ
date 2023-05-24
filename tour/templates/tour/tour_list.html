@@ -1,3 +1,30 @@
 {% extends "base.html" %} {% block content %}
 <h1 class="h1-container">This is my tour list</h1>
+{% for tour in tours %}
+<div class="card-tours">
+  <h2>{{ tour.name }}</h2>
+  <p>{{ tour.description }}</p>
+  <p>Start Date: {{ tour.start_date }}</p>
+  <p>End Date: {{ tour.end_date }}</p>
+  <p>Agent: {{ tour.agent }}</p>
+  <p>Price: {{ tour.price }}</p>
+  <img src="{{ tour.image.url }}" alt="Tour Image" />
+  <a href="{% url 'tour:tour_detail' tour.pk %}">View Details</a>
+</div>
+{% endfor %}
+
+<div class="pagination">
+  {% if tours.has_previous %}
+  <a href="?page=1">&laquo; First</a>
+  <a href="?page={{ tours.previous_page_number }}">Previous</a>
+  {% endif %}
+
+  <span class="current-page">{{ tours.number }}</span>
+
+  {% if tours.has_next %}
+  <a href="?page={{ tours.next_page_number }}">Next</a>
+  <a href="?page={{ tours.paginator.num_pages }}">Last &raquo;</a>
+  {% endif %}
+</div>
+
 {% endblock %}
