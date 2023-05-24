@@ -63,7 +63,7 @@ By separating the functionality into two apps, I can keep the codebase organized
 | Andres Peltier     | Area Manager         | Management    | PeltierA#r3@2023! | andres.peltier         |
 | ITAdmin            | IT                   | IT admin      | 123456            | ITAdmin                |
 
-- Creating custom display for the damin panel for agent:
+- Creating custom display for the admin panel for agent:
 
 ```
 from django.contrib import admin
@@ -76,4 +76,13 @@ class AgentAdmin(admin.ModelAdmin):
     list_display = ('name', 'department', 'position')
 
 admin.site.register(Agent, AgentAdmin)
+```
+
+- Customize the admin panel:
+
+```
+# Adds site header, site title, index title to the admin side.
+admin.site.site_header = 'GoNZ Admin'
+admin.site.site_title = 'GONZ'
+admin.site.index_title = 'Welcome GoNz Team'
 ```

@@ -19,6 +19,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include 
 
+# Adds site header, site title, index title to the admin side.
+admin.site.site_header = 'GoNZ Admin'
+admin.site.site_title = 'GONZ'
+admin.site.index_title = 'Welcome GoNz Team'
 
 urlpatterns = [
     path("admin/", admin.site.urls),
