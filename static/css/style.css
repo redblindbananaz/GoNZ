@@ -1,7 +1,13 @@
+/* General html Section */
+
+body {
+  background-color: #223340;
+}
+
 /* Hero Section */
 .h1-container {
   position: relative;
-  top: 10em;
+  top: 4em;
   left: 0;
   text-align: center;
   z-index: 3;
@@ -14,6 +20,8 @@
 }
 .line2 {
   font-size: 5em;
+  color: #8c785a;
+  font-display: swap;
 }
 .line3 {
   font-size: 0.7em;
@@ -33,3 +41,51 @@
 }
 
 /* Navigation Section */
+
+.navigation-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  color: white;
+}
+ul {
+  list-style-type: none;
+  padding: 1em;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+li {
+  display: inline-block;
+  padding: 10px;
+  position: relative;
+}
+li a:hover {
+  color: #223340;
+}
+li.active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background-color: white;
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+}
+
+.signing {
+  font-size: 1em;
+  font-weight: 100;
+  text-decoration: underline;
+  vertical-align: middle;
+  line-height: 2em;
+}

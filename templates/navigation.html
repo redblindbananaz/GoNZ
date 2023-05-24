@@ -1,8 +1,20 @@
 <nav class="navigation-container">
   <ul>
-    <li class="active"><a href="#">GoNZ</a></li>
-    <li><a href="#">Tours</a></li>
-    <li><a href="#">Agents</a></li>
-    <li><a href="#">Sign Up / Sign In</a></li>
+    {% with request.resolver_match.url_name as url_name %}
+    <li class="{% if url_name == 'home' %} active{% endif %}">
+      <a href="/">GoNZ</a>
+    </li>
+    <li
+      class="{% if url_name == 'tour_list' or url_name == 'tour_details' %} active{% endif %}"
+    >
+      <a href="/tours">Tours</a>
+    </li>
+    <li
+      class="{% if url_name == 'agent_list' or url_name == 'agent_details' %} active{% endif %}"
+    >
+      <a href="/agents">Agents</a>
+    </li>
+    <li><a class="signing" href="#">Sign Up / Sign In</a></li>
   </ul>
+  {% endwith %}
 </nav>

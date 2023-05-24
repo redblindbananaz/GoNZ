@@ -34,7 +34,7 @@ By separating the functionality into two apps, I can keep the codebase organized
 
 - **1. Basic Models and urls:**
 
-* Creating the app
+* Creating the app ( home app will be hosting sign up and landing page and can be extended later for further functionalities)
 * Register the App
 * Create Models
 * Migrate the database with makes migration and migrate
