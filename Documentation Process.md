@@ -64,3 +64,16 @@ By separating the functionality into two apps, I can keep the codebase organized
 | ITAdmin            | IT                   | IT admin      | 123456            | ITAdmin                |
 
 - Creating custom display for the damin panel for agent:
+
+```
+from django.contrib import admin
+from django.contrib.auth.models import User
+from .models import Agent
+
+# Register your models here.
+
+class AgentAdmin(admin.ModelAdmin):
+    list_display = ('name', 'department', 'position')
+
+admin.site.register(Agent, AgentAdmin)
+```
