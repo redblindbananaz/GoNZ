@@ -46,3 +46,19 @@ By separating the functionality into two apps, I can keep the codebase organized
 * Design and functionalities
 
 - **2. Groups, user and authentification:**
+
+* Creation of the super user:
+* Creation of groups and users with passwords
+* Need to extend the existing agent model to abstract user in order to assign permissions.
+
+* | Name               | Position             | Department    | Password   |
+  | ------------------ | -------------------- | ------------- | ---------- |
+  | Haywood Luby       | System Administrator | Administrator | [password] |
+  | Mariah Schumaker   | Technical Director   | Administrator | [password] |
+  | Marty Schaeffer    | Senior Agent         | Agent         | [password] |
+  | Beryl Gauer        | Senior Agent         | Agent         | [password] |
+  | Cathrine Heckstall | Agent                | Agent         | [password] |
+  | Dane Ratliff       | Agent                | Agent         | [password] |
+  | Halina Dabbs       | Managing Director    | Management    | [password] |
+  | Andres Peltier     | Area Manager         | Management    | [password] |
+  | ITAdmin            | IT                   | IT admin      | 123456     |

@@ -1,5 +1,6 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 from .models import Agent    
 
 # Register your models here.
-admin.site.register(Agent)  
+admin.site.register(Agent, UserAdmin)  
