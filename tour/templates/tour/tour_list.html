@@ -7,25 +7,26 @@
         <p>End Date: {{ tour.end_date }}</p>
         <img class="tour-image" src="{{ tour.image.url }}" alt="Tour Image" />
         <p>Agent: {{ tour.agent }}</p>
-        <p>Price: {{ tour.price }}</p>
+        <p>Price: {{ tour.price }}$</p>
         <a href="{% url 'tour:tour_detail' tour.pk %}">View Details</a>
     </div>
     {% endfor %}
 
 </div>
 
-
 <div class="pagination">
-  {% if tours.has_previous %}
-  <a href="?page=1">&laquo; First</a>
-  <a href="?page={{ tours.previous_page_number }}">Previous</a>
-  {% endif %}
+  {% if tours.has_other_pages %}
+    {% if tours.has_previous %}
+    <a href="?page=1">&laquo; First</a>
+    <a href="?page={{ tours.previous_page_number }}">Previous</a>
+    {% endif %}
 
-  <span class="current-page">{{ tours.number }}</span>
+    <span class="current-page">{{ tours.number }}</span>
 
-  {% if tours.has_next %}
-  <a href="?page={{ tours.next_page_number }}">Next</a>
-  <a href="?page={{ tours.paginator.num_pages }}">Last &raquo;</a>
+    {% if tours.has_next %}
+    <a href="?page={{ tours.next_page_number }}">Next</a>
+    <a href="?page={{ tours.paginator.num_pages }}">Last &raquo;</a>
+    {% endif %}
   {% endif %}
 </div>
 
