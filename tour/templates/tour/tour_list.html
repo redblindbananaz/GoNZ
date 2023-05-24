@@ -1,17 +1,19 @@
-{% extends "base.html" %} {% block content %}
-<h1 class="h1-container">This is my tour list</h1>
-{% for tour in tours %}
-<div class="card-tours">
-  <h2>{{ tour.name }}</h2>
-  <p>{{ tour.description }}</p>
-  <p>Start Date: {{ tour.start_date }}</p>
-  <p>End Date: {{ tour.end_date }}</p>
-  <p>Agent: {{ tour.agent }}</p>
-  <p>Price: {{ tour.price }}</p>
-  <img src="{{ tour.image.url }}" alt="Tour Image" />
-  <a href="{% url 'tour:tour_detail' tour.pk %}">View Details</a>
+{% extends "base.html" %} {% block content %} 
+<div class="cards-tours">
+    {% for tour in tours %}
+    <div class="tourCard">
+        <h2>{{ tour.name }}</h2></br>
+        <p>Start Date: {{ tour.start_date }}</p>
+        <p>End Date: {{ tour.end_date }}</p>
+        <img class="tour-image" src="{{ tour.image.url }}" alt="Tour Image" />
+        <p>Agent: {{ tour.agent }}</p>
+        <p>Price: {{ tour.price }}</p>
+        <a href="{% url 'tour:tour_detail' tour.pk %}">View Details</a>
+    </div>
+    {% endfor %}
+
 </div>
-{% endfor %}
+
 
 <div class="pagination">
   {% if tours.has_previous %}
