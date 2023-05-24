@@ -62,3 +62,5 @@ By separating the functionality into two apps, I can keep the codebase organized
 | Halina Dabbs       | Managing Director    | Management    | DabbsM@n@ger2023! | halina.dabbs           |
 | Andres Peltier     | Area Manager         | Management    | PeltierA#r3@2023! | andres.peltier         |
 | ITAdmin            | IT                   | IT admin      | 123456            | ITAdmin                |
+
+- Creating custom display for the damin panel for agent:
