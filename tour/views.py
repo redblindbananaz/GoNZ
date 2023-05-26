@@ -10,7 +10,7 @@ class TourListView(ListView):
     template_name = 'tour/tour_list.html'
     context_object_name = 'tours'
     paginate_by = 3
-    ordering = ['-id']  # Specify the ordering field for consistent pagination
+    ordering = ['-id']  # Specify the ordering field for consistent pagination, in this case the last one first.
     
     def get_queryset(self):
         queryset = super().get_queryset()
