@@ -5,11 +5,18 @@
     <div class="title-container">
       <h2>{{ tour.name }}</h2>
     </div>
-    <p>Start Date: {{ tour.start_date }}</p>
-    <p>End Date: {{ tour.end_date }}</p>
+    <div class="detail">
+      <p>{{ tour.start_date }}</p>
+      <p>-</p>
+      <p>{{ tour.end_date }}</p>
+    </div>
+
     <img class="tour-images" src="{{ tour.image.url }}" alt="Tour Image" />
     <p>Agent: {{ tour.agent }}</p>
-    <p>Price: {{ tour.price }}$</p>
+    <div class="price">
+      <p>Price: {{ tour.price }}$</p>
+    </div>
+
     <a class="detail" href="{% url 'tour:tour_detail' tour.pk %}"
       >View Details</a
     >

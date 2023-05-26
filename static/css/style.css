@@ -2,14 +2,16 @@
   --picdark: #102940;
   --picdeepblue: #3f688c;
   --piclightblue: #9ac7d9;
-  --picbeige: #d9cdb8;
-  --picbrown: #593a1e;
+  --picbeige: rgb(217, 205, 184);
+  --picbrown: rgb(89, 58, 30);
 }
 
 /* General html Section */
 
 body {
   background-color: #223340;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Hero Section */
@@ -104,7 +106,7 @@ a {
   flex: 1;
   display: flex;
   margin: 2em;
-  margin-top: 5em;
+  margin-top: 4em;
   flex-direction: row;
 }
 
@@ -113,10 +115,12 @@ a {
   color: #223340;
   background-color: rgba(255, 255, 255, 0.5);
   width: calc(33.33% - 1em);
+  display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
   text-align: center;
+  flex-wrap: wrap;
   padding: 1em;
   margin: 1em;
   border-radius: 1em;
@@ -140,8 +144,27 @@ a {
 .detail {
   background-color: var(--picdeepblue);
   padding: 0 1em;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
   border-radius: 1em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 1em 0;
+  width: max-content;
+}
+.detail p {
+  padding-right: 1em;
+}
+.price {
+  width: max-content;
+  border-radius: 1em;
+  padding: 0 2em;
+  background-color: rgba(217, 205, 184, 0.6);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  font-size: 1.3em;
+  font-weight: 500;
 }
 
 /* Single tour Section */
@@ -149,7 +172,7 @@ a {
 .single_tour {
   display: flex;
   margin: 2em;
-  margin-top: 5em;
+  margin-top: 4em;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -245,9 +268,11 @@ a {
 /* Pagination Section */
 
 .pagination {
+  position: relative;
   margin-top: 2em;
   padding: 1em;
   color: white;
+  z-index: 4;
 }
 .step-links {
   flex-direction: column;
