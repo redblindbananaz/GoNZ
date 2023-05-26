@@ -5,7 +5,7 @@
         <h2>{{ tour.name }}</h2></br>
         <p>Start Date: {{ tour.start_date }}</p>
         <p>End Date: {{ tour.end_date }}</p>
-        <img class="tour-image" src="{{ tour.image.url }}" alt="Tour Image" />
+        <img class="tour-images" src="{{ tour.image.url }}" alt="Tour Image" />
         <p>Agent: {{ tour.agent }}</p>
         <p>Price: {{ tour.price }}$</p>
         <a href="{% url 'tour:tour_detail' tour.pk %}">View Details</a>
