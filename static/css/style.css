@@ -129,9 +129,13 @@ a {
   border-radius: 1em;
   object-fit: cover;
 }
+
+/* Pagination Section */
+
 .pagination {
-  color: white;
+  color: red;
   z-index: 3;
+  border: 2px solid green;
 }
 
 .current-page {

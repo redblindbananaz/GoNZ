@@ -86,3 +86,8 @@ admin.site.site_header = 'GoNZ Admin'
 admin.site.site_title = 'GONZ'
 admin.site.index_title = 'Welcome GoNz Team'
 ```
+
+### Issues and bugs to fix:
+
+- Pagination is not working as intented>
+- Tour details when clicking on view details is not working- **solved** tempates was named tour_details.html and view, urls refers to tour_detail. with no s
