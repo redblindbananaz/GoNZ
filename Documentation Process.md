@@ -88,7 +88,29 @@ admin.site.index_title = 'Welcome GoNz Team'
 ```
 
 - Create a login/sign up page:
-  creation a login page then have a link to register.
+  creation a login page then have a link to register:
+
+  ```
+    class HomeView(TemplateView):
+        template_name = 'home/home.html'
+
+    class LoginView(View):
+        def get(self, request):
+            return render(request, 'home/login.html')
+
+        def post(self, request):
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('home:home')  # Replace 'tour-list' with the URL name of the tour list page
+            else:
+                messages.error(request, 'Invalid username or password.')
+                return redirect('home:login')
+  ```
+
+* Need to create a sign up page and link it to the login page.
 
 ### Issues and bugs to fix:
 
@@ -96,3 +118,7 @@ admin.site.index_title = 'Welcome GoNz Team'
 - Tour details when clicking on view details is not working- **solved** tempates was named tour_details.html and view, urls refers to tour_detail. with no s
 
 * no active link indicator in tour details and also agent details.
+
+```
+
+```

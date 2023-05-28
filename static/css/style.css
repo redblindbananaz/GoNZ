@@ -14,6 +14,21 @@ body {
   flex-direction: column;
 }
 
+.welcome {
+  position: absolute;
+  top: -2em;
+  right: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  color: white;
+  font-size: 0.7em;
+  font-style: italic;
+}
+
+.welcome h3 {
+  font-weight: 200;
+}
+
 /* Hero Section */
 .h1-container {
   position: relative;
@@ -65,11 +80,18 @@ ul {
   margin: 0;
   display: flex;
   justify-content: space-between;
+  align-self: center;
 }
 li {
   display: inline-block;
   padding: 10px;
   position: relative;
+}
+
+li p {
+  text-align: center;
+  font-style: italic;
+  font-weight: 200;
 }
 li a:hover {
   color: #223340;
@@ -78,11 +100,11 @@ li.active::after {
   content: "";
   display: block;
   position: absolute;
-  bottom: 0;
+  bottom: 2em;
   left: 50%;
   transform: translateX(-50%);
   width: 100px;
-  height: 2px;
+  height: 4px;
   background-color: white;
 }
 a {

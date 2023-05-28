@@ -16,6 +16,11 @@
     </li>
     <li>
       <a class="signing" href="/login">Login/Sign-Up</a>
+      {% if username %}
+      <p>Hi, {{ username }}!</p>
+      {% else %}
+      <p>Welcome to GoNZ</p>
+      {% endif %}
     </li>
   </ul>
   {% endwith %}

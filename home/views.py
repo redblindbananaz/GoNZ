@@ -7,6 +7,13 @@ from django.contrib import messages
 # Create your views here.
 class HomeView(TemplateView):
     template_name = 'home/home.html'
+    
+    # to check if a user is authenticated or not, if the user is logged in then it will return the username
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.request.user.is_authenticated:
+            context['username'] = self.request.user.username
+        return context
 
 class LoginView(View):
     def get(self, request):
@@ -18,7 +25,8 @@ class LoginView(View):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('home:home')  # Replace 'tour-list' with the URL name of the tour list page
+            return redirect('home:home')  #If user exist it returns to home page
         else:
             messages.error(request, 'Invalid username or password.')
             return redirect('home:login')
+        # Otherwise, return an 'invalid login' error message.
