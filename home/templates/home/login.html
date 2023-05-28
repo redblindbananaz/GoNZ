@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block content %}
+<div class="login-card">
+  <h1>GoNZ Login</h1>
+  <form method="post">
+    {% csrf_token %}
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="error"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <div class="username">
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" required />
+    </div>
+    <div class="password">
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" required />
+    </div>
+    <input type="submit" value="LOGIN" class="detail" />
+    <p>Don't have any account yet?</p>
+    <a class="sign-up" href="#">Sign-up</a>
+  </form>
+</div>
+{% endblock %}

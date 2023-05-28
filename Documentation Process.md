@@ -87,9 +87,12 @@ admin.site.site_title = 'GONZ'
 admin.site.index_title = 'Welcome GoNz Team'
 ```
 
+- Create a login/sign up page:
+  creation a login page then have a link to register.
+
 ### Issues and bugs to fix:
 
-- Pagination is not working as intented- ** sorted** Django documentation
+- Pagination is not working as intented - **sorted** Django documentation
 - Tour details when clicking on view details is not working- **solved** tempates was named tour_details.html and view, urls refers to tour_detail. with no s
 
-* no active lin k indicator in tour details and also agent details.
+* no active link indicator in tour details and also agent details.
