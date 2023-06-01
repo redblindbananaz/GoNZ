@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, View
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
@@ -12,7 +13,7 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         if self.request.user.is_authenticated:
-            context['username'] = self.request.user.username
+            context['username'] = self.request.user
         return context
 
 class LoginView(View):
@@ -30,3 +31,19 @@ class LoginView(View):
             messages.error(request, 'Invalid username or password.')
             return redirect('home:login')
         # Otherwise, return an 'invalid login' error message.
+
+class RegisterView(View):
+    def get(self, request):
+        form = UserCreationForm()
+        return render(request, 'home/register.html', {'form': form})
+
+    def post(self, request):
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            messages.success(request, 'Registration successful.')
+            return redirect('home')
+        else:
+            messages.error(request, 'Registration failed. Please check the form.')
+        return render(request, 'home/register.html', {'form': form})

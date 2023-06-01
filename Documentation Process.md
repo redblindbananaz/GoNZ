@@ -110,7 +110,7 @@ admin.site.index_title = 'Welcome GoNz Team'
                 return redirect('home:login')
   ```
 
-* Need to create a sign up page and link it to the login page.
+* Need to create a sign up page and link it to the login page:
 
 ### Issues and bugs to fix:
 
@@ -118,7 +118,4 @@ admin.site.index_title = 'Welcome GoNz Team'
 - Tour details when clicking on view details is not working- **solved** tempates was named tour_details.html and view, urls refers to tour_detail. with no s
 
 * no active link indicator in tour details and also agent details.
-
-```
-
-```
+* Would like to customise username to the name of the person

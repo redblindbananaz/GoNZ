@@ -1,3 +1,10 @@
 {% extends "base.html" %} {% block content %}
-<h1 class="h1-container">This is my Agent list</h1>
-{% endblock %}
+<!-- List of the agents -->
+{% for agent in agents %}
+<div class="singlecard">
+  <h2>{{agent.name}}</h2>
+  <p>"{{agent.bio}}"</p>
+  <p>Position: {{agent.position}}</p>
+  <img src="{{ agent.profile_pic}}" alt="Agent Picture" />
+</div>
+{% endfor %} {% endblock %}
