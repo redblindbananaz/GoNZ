@@ -1,10 +1,21 @@
 {% extends "base.html" %} {% block content %}
 <!-- List of the agents -->
 {% for agent in agents %}
-<div class="singlecard">
-  <h2>{{agent.name}}</h2>
-  <p>"{{agent.bio}}"</p>
-  <p>Position: {{agent.position}}</p>
-  <img src="{{ agent.profile_pic}}" alt="Agent Picture" />
+<!-- ONly showing the agents from the Agent department -->
+{% if agent.department == "Agent" %}
+
+<div class="agent-container">
+  <a href="{% url 'agent:agent_detail' agent.pk %}" class="agent-link">
+    <img
+      src="/media/{{ agent.profile_pic}}"
+      alt="Agent Picture"
+      class="profile"
+    />
+    <div class="agent-card">
+      <h3>{{agent.name}}</h3>
+      <span>{{agent.position}}</span>
+      <p>"{{agent.bio}}"</p>
+    </div>
+  </a>
 </div>
-{% endfor %} {% endblock %}
+{% endif %} {% endfor %} {% endblock %}

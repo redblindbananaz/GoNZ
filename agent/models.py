@@ -12,7 +12,10 @@ class Agent(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=20)
     bio = models.TextField()
-    profile_pic = models.ImageField(upload_to='profiles/', null=True, blank=True)
+    profile_pic = models.ImageField(upload_to='profiles/', null=True, blank=True, default = 'profiles/default.jpg')
 
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse("agent_detail",kwargs={"pk": self.pk})

@@ -387,3 +387,58 @@ form {
 }
 
 /* Agent Section */
+
+.agent-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-self: center;
+  align-items: center;
+  width: 90%;
+  flex-direction: row;
+  z-index: 5;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 1em;
+  border: 1px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.agent-card {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+.agent-card h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--picdark);
+  margin: 0;
+}
+.agent-card p {
+  font-size: 1.2em;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--picdark);
+  margin-top: 1em;
+}
+.agent-link {
+  all: inherit;
+  cursor: pointer;
+}
+.agent-link:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.profile {
+  z-index: 5;
+  text-align: center;
+  vertical-align: center;
+  width: 100px;
+  height: 100px;
+  border: 2px solid white;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0em 1em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
