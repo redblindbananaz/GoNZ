@@ -112,6 +112,20 @@ admin.site.index_title = 'Welcome GoNz Team'
 
 * Need to create a sign up page and link it to the login page:
 
+* Creation of agent details:
+  modification of the View to filter the tour created by the agent:
+
+```
+def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['tours'] = Tour.objects.filter(agent=self.object)
+        return context
+```
+
+`context = super().get_context_data(**kwargs)`: This line calls the parent class's get_context_data method to get the initial context data.
+`context['tours'] = Tour.objects.filter(agent=self.object)`: This line adds an additional key-value pair to the context dictionary. The key is 'tours', and the value is the result of filtering the Tour objects based on the agent field, which is set to the current agent object (self.object).
+`return context`: This line returns the updated context dictionary, which includes the tours related to the agent.
+
 ### Issues and bugs to fix:
 
 - Pagination is not working as intented - **sorted** Django documentation
