@@ -408,12 +408,13 @@ form {
   display: flex;
   flex-direction: column;
 }
+
 .agent-card h3 {
   font-size: 1.5em;
   font-weight: 600;
   letter-spacing: 0.1em;
   color: var(--picdark);
-  margin: 0;
+  justify-content: center;
 }
 .agent-card p {
   font-size: 1.2em;
@@ -444,3 +445,23 @@ form {
 }
 
 /* Agent Detail Section */
+.agent-container2 {
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+  align-items: center;
+  width: max-content;
+  flex-direction: row;
+  z-index: 5;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 1em;
+  border: 1px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.mid {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}

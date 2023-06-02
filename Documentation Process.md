@@ -133,3 +133,4 @@ def get_context_data(self, **kwargs):
 
 * no active link indicator in tour details and also agent details.
 * Would like to customise username to the name of the person
+* If agent has no tour, display message, no tours available.
