@@ -30,6 +30,8 @@ Creation of two separate apps: one for handling the tours-related functionality 
 
 By separating the functionality into two apps, I can keep the codebase organized, maintain a clear separation of concerns, and easily manage and scale each feature independently. It also provides modularity and makes it easier to understand and maintain the codebase in the long run.
 
+Note: Addition of the home app, to host the landing page, login and register page
+
 ### Steps:
 
 - **1. Basic Models and urls:**
@@ -133,4 +135,12 @@ def get_context_data(self, **kwargs):
 
 * no active link indicator in tour details and also agent details- **sorted** url names for agent and tour \_detail had an s at the end.
 * Would like to customise username to the name of the person
-* If agent has no tour, display message, no tours available.
+* If agent has no tour, display message, no tours available**sorted**
+
+```
+{% if agent.tour_set.all %}
+<!-- show the content for each tours>
+{% else %}
+<h2 class="no-tours">No tours available from this agent.</h2>
+{% endif %}
+```
