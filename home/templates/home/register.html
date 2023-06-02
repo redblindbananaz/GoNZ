@@ -4,13 +4,10 @@
   <form method="post">
     {% csrf_token %} {% if form.errors %}
     <ul class="messages">
-      {% for field_errors in form.errors.values %} {% for error in field_errors
-      %}
-      <li class="error">{{ error }}</li>
-      {% endfor %} {% endfor %}
+      <li class="error">ERROR</li>
     </ul>
     {% endif %} {{ form.as_p }}
-    <input type="submit" value="Register" class="detail" />
+    <input type="submit" value="Register" class="reg" />
   </form>
 </div>
 {% endblock %}

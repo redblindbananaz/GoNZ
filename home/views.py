@@ -43,7 +43,7 @@ class RegisterView(View):
             user = form.save()
             login(request, user)
             messages.success(request, 'Registration successful.')
-            return redirect('home')
+            return redirect('home:home')
         else:
             messages.error(request, 'Registration failed. Please check the form.')
         return render(request, 'home/register.html', {'form': form})

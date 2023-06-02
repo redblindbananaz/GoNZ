@@ -130,7 +130,7 @@ a {
   flex: 1;
   display: flex;
   margin: 2em;
-  margin-top: 4em;
+  margin-top: 2em;
   flex-direction: row;
 }
 
@@ -184,7 +184,7 @@ a {
 .price {
   width: max-content;
   border-radius: 1em;
-  padding: 0 2em;
+  padding: 0em 0.5em;
   background-color: rgba(217, 205, 184, 0.6);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   font-size: 1.3em;
@@ -196,7 +196,7 @@ a {
 .single_tour {
   display: flex;
   margin: 2em;
-  margin-top: 4em;
+  margin-top: 2em;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -328,7 +328,7 @@ a {
   align-self: center;
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.5);
-  margin-top: 4em;
+  margin-top: 2em;
   padding: 1em;
   border-radius: 1em;
   border: 1px solid white;
@@ -390,7 +390,7 @@ form {
 
 .agent-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-self: center;
   align-items: center;
   width: 90%;
@@ -402,6 +402,12 @@ form {
   border-radius: 1em;
   border: 1px solid white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.no-tours {
+  z-index: 5;
+  color: white;
+  text-align: center;
+  letter-spacing: 0.2em;
 }
 .agent-card {
   flex: 2;
@@ -447,21 +453,108 @@ form {
 /* Agent Detail Section */
 .agent-container2 {
   display: flex;
-  justify-content: space-around;
-  align-self: center;
-  align-items: center;
   width: max-content;
   flex-direction: row;
   z-index: 5;
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 0.5em;
-  margin: 0.5em;
+  padding: 0.5em 2em;
+  margin: 1em;
   border-radius: 1em;
   border: 1px solid white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-.mid {
+
+/* Register Section */
+.register-card {
+  width: max-content;
+  z-index: 5;
   display: flex;
   justify-content: center;
   align-content: center;
+  align-items: center;
+  align-self: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top: 2em;
+  padding: 1em;
+  border-radius: 1em;
+  border: 1px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.register-card ul {
+  display: flex;
+  align-items: flex-start;
+  align-self: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1em;
+  margin: 0.5em 0;
+  border-radius: 1em;
+  border: 1px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.errorlist {
+  color: red;
+  font-size: 0.8em;
+  margin: 0;
+  padding: 0;
+  background-color: none;
+}
+.register-card form {
+  align-items: center;
+}
+
+.register-card form p {
+  width: 70%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.register-card label {
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--picdark);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1em 0.5em;
+}
+
+.register-card input {
+  width: 70%;
+  padding: 0.5em;
+  border: 1px solid white;
+  border-radius: 1em;
+  color: var(--picdark);
+  margin-bottom: 1em;
+}
+
+.register-card ul li {
+  padding: 0;
+  font-style: italic;
+}
+
+.helptext {
+  font-size: 0.8em;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+}
+
+.reg {
+  background-color: var(--picdeepblue);
+  padding: 0.5em 1.5em;
+  color: white;
+  font-size: 1.3em;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  border-radius: 1em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 1em 0;
+  width: max-content;
 }
