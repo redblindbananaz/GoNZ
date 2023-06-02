@@ -131,6 +131,6 @@ def get_context_data(self, **kwargs):
 - Pagination is not working as intented - **sorted** Django documentation
 - Tour details when clicking on view details is not working- **solved** tempates was named tour_details.html and view, urls refers to tour_detail. with no s
 
-* no active link indicator in tour details and also agent details.
+* no active link indicator in tour details and also agent details- **sorted** url names for agent and tour \_detail had an s at the end.
 * Would like to customise username to the name of the person
 * If agent has no tour, display message, no tours available.
