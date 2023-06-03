@@ -19,6 +19,8 @@ class AgentDetailView(DetailView):
     context_object_name = 'agent'
     
     def get_context_data(self, **kwargs):
+        # Call the parent class's get_context_data method and store the result in the 'context' variable
         context = super().get_context_data(**kwargs)
+        # Retrieve all Tour objects where the agent is the same as the current object
         context['tours'] = Tour.objects.filter(agent=self.object)
         return context

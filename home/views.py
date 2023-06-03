@@ -9,9 +9,10 @@ from django.contrib import messages
 class HomeView(TemplateView):
     template_name = 'home/home.html'
     
-    # to check if a user is authenticated or not, if the user is logged in then it will return the username
+    # Retrieves the context data for the home view
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        # Check if the user is authenticated and add the username to the context
         if self.request.user.is_authenticated:
             context['username'] = self.request.user
         return context
@@ -21,12 +22,17 @@ class LoginView(View):
         return render(request, 'home/login.html')
 
     def post(self, request):
+        # Retrieve the username and password from the request
         username = request.POST['username']
         password = request.POST['password']
+        
+        # Authenticate the user
         user = authenticate(request, username=username, password=password)
+        
+         # If the user exists, log them in and redirect to the home page
         if user is not None:
             login(request, user)
-            return redirect('home:home')  #If user exist it returns to home page
+            return redirect('home:home') 
         else:
             messages.error(request, 'Invalid username or password.')
             return redirect('home:login')
@@ -34,11 +40,16 @@ class LoginView(View):
 
 class RegisterView(View):
     def get(self, request):
+        # Create an instance of the UserCreationForm
         form = UserCreationForm()
+        # Render the registration page with the form
         return render(request, 'home/register.html', {'form': form})
 
     def post(self, request):
+        # Create an instance of the UserCreationForm with the form data from the request
         form = UserCreationForm(request.POST)
+        
+        # If the form is valid, save the user, log them in, display a success message, and redirect to the home page
         if form.is_valid():
             user = form.save()
             login(request, user)
