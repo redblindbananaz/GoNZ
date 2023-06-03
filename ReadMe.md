@@ -2,6 +2,11 @@
 
 GoNZ provides New Zealand tourism services for travelers from around the world. The company wants to create a professional and responsive web application with a rich UI. After a thorough discussion amongst the Design Team, Development Team and product owner, they decide to build the application using Django
 
+## Video Demo
+
+[![Project Demo](https://drive.google.com/uc?id=1TazM1pXz3v2hQC0MQ0AdnP_uo5pYSCBP)](https://drive.google.com/file/d/1TazM1pXz3v2hQC0MQ0AdnP_uo5pYSCBP/view?usp=drive_link)
+
+
 ## Table of Contents
 
 - [Project Overview](#project-overview)
